@@ -1,12 +1,12 @@
 // generate a three part grid that has text on the sides
 // and contains a png on the center cell
-import MainImage from "./main_dish.png";
+import MainImage from "./main_dish.jpg";
 
-function generateTextDiv(template) {
-  const textContainer = document.createElement("div");
-  textContainer.classList.add(template[0]);
-  textContainer.textContent = template[1];
-  return textContainer;
+function generateElement(element, template) {
+  const newElement = document.createElement(element);
+  newElement.classList.add(template[0]);
+  newElement.textContent = template[1];
+  return newElement;
 }
 
 function generateImage(src) {
@@ -21,15 +21,9 @@ function generateImage(src) {
   return imageContainer;
 }
 
-const textTemplate1 = ["restaurant_name-text", "Praesent imperdiet bibendum elementum."];
-const textTemplate2 = ["flavour-text", "Lorem ipsum dolor sit amet."];
-const text1 = generateTextDiv(textTemplate1);
-const text2 = generateTextDiv(textTemplate2);
-const image = generateImage(MainImage);
-
-function generateBundleDiv(childElements) {
+function generateBundleDiv(childElements, className) {
   const bundleDiv = document.createElement("div");
-  bundleDiv.classList.add("home-main-container");
+  bundleDiv.classList.add(className);
 
   childElements.forEach((element) => {
     bundleDiv.appendChild(element);
@@ -38,4 +32,11 @@ function generateBundleDiv(childElements) {
   return bundleDiv;
 }
 
-export default generateBundleDiv([text1, image, text2]);
+const textTemplate1 = ["restaurant-name-text", "Enjoy Our Delicious Meals"];
+const textTemplate2 = ["flavour-text", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."];
+const text1 = generateElement("div", textTemplate1);
+const text2 = generateElement("div", textTemplate2);
+const textBundle = generateBundleDiv([text1, text2], "home-text-container");
+const image = generateImage(MainImage);
+
+export default generateBundleDiv([image, textBundle], "home-container");
