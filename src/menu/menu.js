@@ -4,19 +4,21 @@ import Meal2 from "./meal_imgs/meal2.png";
 import Meal3 from "./meal_imgs/meal3.png";
 
 const menu = [
-  [Meal1, "Lorem Ipsum", "dolor sit amet", "20"],
-  [Meal2, "Lorem Ipsum", "dolor sit amet", "25"],
-  [Meal3, "Lorem Ipsum", "dolor sit amet", "30"],
+  [Meal1, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "20"],
+  [Meal2, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "25"],
+  [Meal3, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "30"],
 ];
+// agregar otra mas y poner overflow control en el cotenedor
 
 function generateMealDiv(imageSrc, name, description, price) {
   const mealImage = devTools.generateImage(imageSrc, "meal-image");
   const mealName = devTools.generateElementWithText("div", "meal-name", name);
   const mealDesc = devTools.generateElementWithText("div", "meal-desc", description);
   const mealInfo = devTools.generateBundleDiv([mealName, mealDesc], "meal-info");
+  const mealRight = devTools.generateBundleDiv([mealImage, mealInfo], "meal-right");
   const mealPrice = devTools.generateElementWithText("div", "meal-price", price);
 
-  return devTools.generateBundleDiv([mealImage, mealInfo, mealPrice], "meal-menu");
+  return devTools.generateBundleDiv([mealRight, mealPrice], "meal-menu");
 }
 
 function generateFullMenu(menuTemplate) {
@@ -32,7 +34,7 @@ function generateFullMenu(menuTemplate) {
     container.push(mealDiv);
   });
 
-  return devTools.generateBundleDiv(container, "menu");
+  return devTools.generateBundleDiv(container, "menu-tab");
 }
 
 export default generateFullMenu(menu);
