@@ -4,7 +4,13 @@ import Meal1 from "./meal_imgs/meal1.png";
 import Meal2 from "./meal_imgs/meal2.png";
 import Meal3 from "./meal_imgs/meal3.png";
 
-function generateMealMenu(imageSrc, name, description, price) {
+const menu = [
+  [Meal1, "Lorem Ipsum", "dolor sit amet", "20"],
+  [Meal2, "Lorem Ipsum", "dolor sit amet", "25"],
+  [Meal3, "Lorem Ipsum", "dolor sit amet", "30"],
+];
+
+function generateMealDiv(imageSrc, name, description, price) {
   const mealImage = devTools.generateImage(imageSrc, "meal-image");
   const mealName = devTools.generateElementWithText("div", "meal-name", name);
   const mealDesc = devTools.generateElementWithText("div", "meal-desc", description);
@@ -14,6 +20,20 @@ function generateMealMenu(imageSrc, name, description, price) {
   return generateBundleDiv([mealImage, mealInfo, mealPrice], "meal-menu");
 }
 
-const menu1 = generateMealMenu(Meal1, "asdfsdaf", "sadfasdf", "200");
+function generateFullMenu(menuTemplate) {
+  const container = [];
 
-export default menu1;
+  menuTemplate.forEach((element) => {
+    const img = element[0];
+    const name = element[1];
+    const desc = element[2];
+    const price = element[3];
+
+    const mealDiv = generateMealDiv(img, name, desc, price);
+    container.push(mealDiv);
+  });
+
+  return generateBundleDiv(container, "menu");
+}
+
+export default generateFullMenu(menu);
