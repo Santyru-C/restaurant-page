@@ -4,15 +4,14 @@ function generateElement(element, elementClass) {
   return newElement;
 }
 
-function generateImage(src) {
-  const imageContainer = document.createElement("div");
-  imageContainer.classList.add("home-image-container");
+function generateImage(src, imgClass) {
+  const imageContainer = generateElement("div", "image-container");
 
-  const homeMealImage = document.createElement("img");
-  homeMealImage.classList.add("home-image");
-  homeMealImage.src = src;
+  const image = document.createElement("img");
+  image.classList.add(imgClass);
+  image.src = src;
 
-  imageContainer.appendChild(homeMealImage);
+  imageContainer.appendChild(image);
   return imageContainer;
 }
 
