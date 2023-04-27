@@ -1,5 +1,4 @@
 import * as devTools from "../generators";
-import { generateBundleDiv } from "../generators";
 import Meal1 from "./meal_imgs/meal1.png";
 import Meal2 from "./meal_imgs/meal2.png";
 import Meal3 from "./meal_imgs/meal3.png";
@@ -17,7 +16,7 @@ function generateMealDiv(imageSrc, name, description, price) {
   const mealInfo = devTools.generateBundleDiv([mealName, mealDesc], "meal-info");
   const mealPrice = devTools.generateElementWithText("div", "meal-price", price);
 
-  return generateBundleDiv([mealImage, mealInfo, mealPrice], "meal-menu");
+  return devTools.generateBundleDiv([mealImage, mealInfo, mealPrice], "meal-menu");
 }
 
 function generateFullMenu(menuTemplate) {
@@ -33,7 +32,7 @@ function generateFullMenu(menuTemplate) {
     container.push(mealDiv);
   });
 
-  return generateBundleDiv(container, "menu");
+  return devTools.generateBundleDiv(container, "menu");
 }
 
 export default generateFullMenu(menu);
