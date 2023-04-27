@@ -5,6 +5,7 @@ function generateElement(element, elementClass) {
 }
 
 function generateImage(src, imgClass) {
+  /* Returns the image wrapped in a generic div container */
   const imageContainer = generateElement("div", "image-container");
 
   const image = document.createElement("img");
@@ -13,6 +14,13 @@ function generateImage(src, imgClass) {
 
   imageContainer.appendChild(image);
   return imageContainer;
+}
+
+function generateElementWithText(element, elementClass, text) {
+  const newElement = generateElement(element, elementClass);
+  newElement.textContent = text;
+
+  return newElement;
 }
 
 function generateBundleDiv(childElements, className) {
@@ -26,4 +34,9 @@ function generateBundleDiv(childElements, className) {
   return bundleDiv;
 }
 
-export { generateElement, generateImage, generateBundleDiv };
+export {
+  generateElement,
+  generateImage,
+  generateBundleDiv,
+  generateElementWithText,
+};
