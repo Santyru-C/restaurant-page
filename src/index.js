@@ -1,5 +1,9 @@
-const mainContent = document.getElementById("content");
+import * as devTools from "./generators";
+import home from "./home_tab";
+import menu from "./menu/menu";
+import contact from "./contact";
 
+const mainContent = document.getElementById("content");
 // to do
 
 // set a 3 row grid for the main page
@@ -8,22 +12,21 @@ const mainContent = document.getElementById("content");
 // middle row will be the one that will be used to dinamically
 // load the diferent parts of the website
 
-const layoutGrid = document.createElement("div");
-layoutGrid.classList.add("layout-grid");
+const layoutGrid = devTools.generateElement("div", "layout-grid");
+const logo = devTools.generateElement("h1", "logo");
+logo.textContent = "IL RISTORANTE";
 
-function generateNavBar() {
-  const navBar = document.createElement("div");
-  navBar.classList.add("top-nav");
+const tabLabels = ["Home", "Menu", "Contact"];
+const tabContainer = devTools.generateElement("div", "tab-container");
+tabLabels.forEach((label) => {
+  const tab = devTools.generateElement("button", "tab");
+  tab.textContent = label;
+  tabContainer.appendChild(tab);
+});
 
-  const tabLabels = ["Home", "Menu", "Contact"];
-  tabLabels.forEach((label) => {
-    const tab = document.createElement("div");
-    tab.textContent = label;
-    tab.classList.add("tab");
-    navBar.appendChild(tab);
-  });
-  return navBar;
-}
-
+const headerContainer = devTools.generateElement("div", "header-container");
+headerContainer.appendChild(logo);
+headerContainer.appendChild(tabContainer);
 mainContent.appendChild(layoutGrid);
-layoutGrid.appendChild(generateNavBar());
+layoutGrid.appendChild(headerContainer);
+layoutGrid.appendChild(contact);
