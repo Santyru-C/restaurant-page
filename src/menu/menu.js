@@ -34,7 +34,7 @@ function generateFullMenu(menuTemplate) {
     container.push(mealDiv);
   });
 
-  return devTools.generateBundleDiv(container, "menu-tab");
+  return devTools.generateBundleDiv(container, "menu-container");
 }
 
 export default generateFullMenu(menu);
