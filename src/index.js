@@ -2,6 +2,7 @@ import * as devTools from "./generators";
 import home from "./home_tab";
 import menu from "./menu/menu";
 import contact from "./contact";
+import "./style.css";
 
 let currentTab = "home";
 const mainContent = document.getElementById("content");
