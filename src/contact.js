@@ -9,7 +9,7 @@ const contactInfo = {
 };
 
 const infoDiv = (function generateContactCard(info) {
-  const title = devTools.generateElementWithText("h1", "contact-title", "Contact");
+  const title = devTools.generateElementWithText("h2", "contact-title", "Contact");
   const container = devTools.generateElement("div", "contact-wrapper");
 
   for (const [key, value] of Object.entries(info)) {

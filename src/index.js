@@ -3,14 +3,8 @@ import home from "./home_tab";
 import menu from "./menu/menu";
 import contact from "./contact";
 
+let currentTab = "home";
 const mainContent = document.getElementById("content");
-// to do
-
-// set a 3 row grid for the main page
-// this will be used as the base layout for the page
-// top row will serve as the logo and nav container
-// middle row will be the one that will be used to dinamically
-// load the diferent parts of the website
 
 const layoutGrid = devTools.generateElement("div", "layout-grid");
 const logo = devTools.generateElement("h1", "logo");
@@ -22,6 +16,7 @@ tabLabels.forEach((label) => {
   const tabClass = `tab-${label}`;
   const tabText = label.charAt(0).toUpperCase() + label.slice(1);
   const tab = devTools.generateElementWithText("li", tabClass, tabText);
+  tab.classList.add("tab");
   tabContainer.appendChild(tab);
 });
 
@@ -32,8 +27,6 @@ headerContainer.appendChild(tabContainer);
 mainContent.appendChild(layoutGrid);
 layoutGrid.appendChild(headerContainer);
 layoutGrid.appendChild(contentContainer);
-
-let currentTab = "home";
 
 function switchTab(newTab) {
   if (newTab !== currentTab) {
@@ -57,6 +50,7 @@ function switchTab(newTab) {
     }
   }
 }
+
 const homeTab = document.getElementsByClassName("tab-home")[0];
 const menuTab = document.getElementsByClassName("tab-menu")[0];
 const contactTab = document.getElementsByClassName("tab-contact")[0];
