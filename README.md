@@ -1,6 +1,6 @@
 # restaurant-page
 A restaurant page made following TOP module and webpack courses
-- Live demo [_here_](https://www.example.com).
+- Live demo [_here_](https://santyru-c.github.io/restaurant-page/).
 
 ## General Information
 This is a really simply styled webpage made to put in practice all
@@ -32,7 +32,7 @@ Learning how to properly use ECS6 modules together with a module bundler is lite
 That made up for the fact that I do not really enjoy styling restaurant pages.
 
 ## Acknowledgements
-- This project was based on [this lesson](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page) from TOP
+This project was based on [this lesson](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page) from TOP
 about objects.
 
 ## Contact
