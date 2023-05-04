@@ -2,11 +2,14 @@ import * as devTools from "../generators";
 import Meal1 from "./meal_imgs/meal1.png";
 import Meal2 from "./meal_imgs/meal2.png";
 import Meal3 from "./meal_imgs/meal3.png";
+import Meal4 from "./meal_imgs/meal4.png";
 
 const menu = [
-  [Meal1, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "20"],
-  [Meal2, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "25"],
-  [Meal3, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "30"],
+  [Meal1, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "$20"],
+  [Meal2, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "$25"],
+  [Meal3, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "$30"],
+  [Meal4, "Lorem Ipsum", "Etiam accumsan turpis sed enim sollicitudin dignissim.", "$30"],
+
 ];
 // agregar otra mas y poner overflow control en el cotenedor
 
