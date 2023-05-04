@@ -22,34 +22,6 @@ const infoDiv = (function generateContactCard(info) {
   return devTools.generateBundleDiv([title, container], "contact-info");
 }(contactInfo));
 
-function generateContactForm() {
-  const formWrapper = devTools.generateElement("div", "form-wrapper");
-  const form = devTools.generateElement("form", "contact-form");
-
-  form.innerHTML = `
-  <h3>Message us</h3>
-  <div class="input-box">
-    <label for="name" class="label-name">Name:</label>
-    <input type="text" id="name" required />
-  </div>
-  <div class="input-box">
-    <label for="email" class="label-email">Email:</label>
-    <input type="text" id="email" required />
-  </div>
-  <div class="input-box">
-    <label for="phone" class="label-email">Phone:</label>
-    <input type="number" id="phone" required />
-  </div>
-  <div class="input-box">
-    <label for="phone" class="label-email">Message:</label>
-    <textarea required></textarea>
-  </div>
-  <input type="submit" value="Send" />`;
-
-  formWrapper.appendChild(form);
-  return formWrapper;
-}
-
-const contactTab = devTools.generateBundleDiv([infoDiv, generateContactForm()], "contact-container");
+const contactTab = devTools.generateBundleDiv([infoDiv], "contact-container");
 
 export default contactTab;
